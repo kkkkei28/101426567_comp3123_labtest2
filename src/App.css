@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to bottom, #1e3c72, #2a5298);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
   color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* App Container */
+.app-container {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+/* Dynamic Weather Result */
+.weather-result {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease; /* Smooth transition when background changes */
+}
+
+/* Weather Icon */
+.weather-icon {
+  font-size: 60px; /* Increase size */
+  color: White;
+  margin-left: 10px;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background: linear-gradient(to bottom, #121212, #1c1c1c);
+  color: White;
+}
+
+/* Toggle Button */
+.toggle-button {
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.toggle-button:hover {
+  background: #555;
+}
+
+/* Header */
+.weather-header {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Responsive Weather Icon */
+@media (max-width: 768px) {
+  .weather-icon {
+    font-size: 40px; /* Adjust for smaller screens */
+  }
+}
+
+/* Weather Details */
+.weather-details {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.weather-details div {
+  text-align: left;
+}
+
+/* Forecast Section */
+.forecast-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Forecast Cards */
+.forecast-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  width: 100px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.forecast-card:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .forecast-container {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .forecast-card {
+    width: 100px;
+  }
+
+  .weather-details {
+    flex-direction: column;
   }
 }
